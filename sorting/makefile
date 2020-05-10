@@ -2,13 +2,15 @@ OPTIONS=-g -Wall
 
 .PHONY: default all clean
 
-default: mergeSort
+default: quickSort
 
-all: mergeSort
+all: mergeSort quickSort
 
 clean:
-	rm -f mergeSort
-
+	rm -f mergeSort quickSort
 
 mergeSort: mergeSort.cpp
+	g++ -o $@ ${OPTIONS} $^
+
+quickSort: quickSort.cpp
 	g++ -o $@ ${OPTIONS} $^
